@@ -9,13 +9,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  let result = a + b;
+  let result = [];
+  result.push(a+b);
   let cat = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
-  return [result, cat];
+  result.push(cat);
+  return result;
 }
 
 // Here is the test for sum(); uncomment it to run it
-//testSum(4, 7);
+// testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -29,13 +31,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  let product = a * b;
-  let mCat = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
-  return [product, mCat];
+  let result = [];
+  result.push(a*b);
+  let mCat = 'The product of ' + a + ' and ' + b + ' is ' + result + '.';
+  result.push(mCat);
+  return result;
 }
 
 //  Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+//testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -53,10 +57,21 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 
+  let answerArray = [];
+  let firstAnswer = sum(a,b)[0];
+  answerArray.push(sum(firstAnswer, c)[0]);
+
+  let firstProduct = multiply(a,b)[0];
+  answerArray.push(multiply(firstProduct, c)[0]);
+
+  answerArray.push(a + ' and ' + b + ' and ' + c + ' sum to '+ answerArray[0] + '.');
+  answerArray.push ('The product of ' + a + ' and ' + b + ' and ' + c + ' is '+ answerArray[1] + '.');
+  console.log(answerArray);
+  return answerArray;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
