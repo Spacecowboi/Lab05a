@@ -87,17 +87,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
-
+//volunteered to work in class
 function sumArray(sumArr) { //eslint-disable-line
-  let a = sumArr[0];
-  let b = sumArr[1];
-  let c = sumArr[2];
   let array = [];
 
-  let massSum = sumAndMultiply(a,b,c)[0];
-//   array.push (massSum);
-  array.push (a + ',' + b + ',' + c + ' was passed in as an array of numbers, and ' + massSum + ' is their sum. ');
-  console.log(array);
+  let firstNumber = sumArr[0];
+  let secondNumber = sumArr[1];
+  let firstSumResult = sum(firstNumber, secondNumber);
+  let secondSumResult = sum(firstSumResult[0], sumArr[2]);
+
+  array.push(secondSumResult[0]);
+  array.push(`${sumArr[0]}, ${sumArr[1]}, ${sumArr[2]} was passed in as an array of numbers, and ${secondSumResult[0]} is their sum.`);
   return array;
 
 
